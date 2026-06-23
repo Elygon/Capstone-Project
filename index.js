@@ -1,5 +1,6 @@
 // 1. Import Express
 const express = require('express');
+const  { sendWelcomeEmail } = require("./utils/nodemailer");
 
 // 2. Initialize the Express application
 const app = express();
@@ -18,6 +19,7 @@ app.get('/api/user', (req, res) => {
     name: 'Alex Developer',
     status: 'Coding'
   });
+  sendWelcomeEmail("soundmindtesting@gmail.com")
 });
 
 // 5. Start the server
